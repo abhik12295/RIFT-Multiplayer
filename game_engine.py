@@ -114,7 +114,7 @@ class GameManager:
         with self._lock:
             room = self._require_room(code)
             self._tick_room(room)
-          if room.state != "LOBBY" and player_id not in room.players:
+            if room.state != "LOBBY" and player_id not in room.players:
                 raise GameError("Mission already in progress. New crew cannot join this run.")
             if player_id in room.players:
                 room.players[player_id].connected = True
